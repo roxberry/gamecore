@@ -32,6 +32,20 @@ const config = convict({
       format: String,
       default: 'users'
     }
+  },
+  secret: {
+    doc: "Secret key for JWT",
+    format: String,
+    default: "",
+    env: "SECRET_KEY",
+    arg: "secretKey"
+  },
+  connectionString: {
+    doc: "Database connection string.",
+    format: String,
+    default: "http://localhost:27017/gamecore",
+    env: "CONNECTION_STRING",
+    arg: "connectionString"
   }
 });
 

@@ -1,18 +1,28 @@
-const http = require('http');
-const config = require('./config/config');
+require('rootpath')();
+var express = require('express')
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const jwt = require('_utils/jwt');
+const errorHandler = require('_utils/error-handler');
+const config = require('config/config');
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors());
+
+// use JWT auth to secure the api
+app.use(jwt());
+
+// api routes
+app.use('/users', require('users/user.controller'));
+
+// global error handler
+app.use(errorHandler);
 
 const hostname = process.env.HOST || config.ip;
 const port = process.env.PORT || config.port;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
-});
-
-
-console.log(config);
-
-server.listen(port, hostname, () => {
+const server = app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
