@@ -17,6 +17,8 @@ app.use(jwt());
 // api routes
 app.use('/users', require('users/user.controller'));
 
+app.get('/', (req, res) => res.send('Hello World!'));
+
 // global error handler
 app.use(errorHandler);
 

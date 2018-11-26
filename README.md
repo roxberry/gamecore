@@ -9,3 +9,6 @@ openssl rand -base64 64
 [node simple jwt auth](http://jasonwatmore.com/post/2018/06/14/nodejs-mongodb-simple-api-for-authentication-registration-and-user-management)
 
 [angular 7 using simple jwt auth](http://jasonwatmore.com/post/2018/10/29/angular-7-user-registration-and-login-example-tutorial)
+
+## create cosmodb (production mongo)
+az cosmosdb create --name gamecore --resource-group expeditionary --kind MongoDB
