@@ -46,6 +46,20 @@ const config = convict({
     default: "http://localhost:27017/gamecore",
     env: "CONNECTION_STRING",
     arg: "connectionString"
+  },
+  databaseUser : {
+    doc: "Database connection user.",
+    format: String,
+    default: "",
+    env: "DB_USER",
+    arg: "databaseUser"
+  },
+  databaseKey: {
+    doc: "Database connection key.",
+    format: String,
+    default: "",
+    env: "DB_KEY",
+    arg: "databaseKey"
   }
 });
 
