@@ -3,7 +3,7 @@ const config = require('config/config');
 var express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-//const jwt = require('_utils/jwt');
+const jwt = require('_utils/jwt');
 const errorHandler = require('_utils/error-handler');
 const app = express();
 
@@ -17,7 +17,7 @@ app.use(jwt());
 // api routes
 app.use('/users', require('users/user.controller'));
 
-app.get('/', (req, res) => res.send("gamecore api"));
+app.get('/', (req, res) => res.send(config.env));
 
 // global error handler
 app.use(errorHandler);
