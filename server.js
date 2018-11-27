@@ -17,7 +17,7 @@ app.use(jwt());
 // api routes
 app.use('/users', require('users/user.controller'));
 
-app.get('/', (req, res) => res.send(config.env));
+app.get('/', (req, res) => res.send("gamecore api"));
 
 // global error handler
 app.use(errorHandler);
