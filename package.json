@@ -1,7 +1,7 @@
 {
   "name": "gamecore",
   "version": "1.0.0",
-  "description": "",
+  "description": "## jwt secrets",
   "main": "server.js",
   "repository": {
     "type": "git",
@@ -11,6 +11,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/roxberry/gamecore/issues"
+  },
+  "scripts": {
+    "start": "node server.js"
   },
   "homepage": "https://github.com/roxberry/gamecore#readme",
   "dependencies": {
