@@ -4,8 +4,6 @@ const mongoose = require('mongoose');
 
 mongoose.set('useCreateIndex', true);
 
-console.log(config.connectionString);
-
 mongoose.connect(config.connectionString, {
         useNewUrlParser: true,
         auth: {
